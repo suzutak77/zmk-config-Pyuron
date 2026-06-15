@@ -28,7 +28,7 @@
 			psels = <NRF_PSEL(TWIM_SDA, 0, 4)>,
 				    <NRF_PSEL(TWIM_SCL, 0, 5)>;
             bias-pull-up;
-			//low-power-enable;
+			low-power-enable;
 		};
 	};
 };
@@ -51,7 +51,7 @@
         compatible = "azoteq,iqs7211e";
         reg = <0x56>;
         irq-gpios = <&gpio0 2 GPIO_PULL_UP>;
-        power-gpios = <&gpio0 9 GPIO_ACTIVE_HIGH>;
+        //power-gpios = <&gpio0 9 GPIO_ACTIVE_HIGH>;
         scroller-mode;
     };
 };
