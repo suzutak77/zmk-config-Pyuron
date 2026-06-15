@@ -15,7 +15,6 @@ manifest:
       import: app/west.yml
     - name: zmk-driver-iqs7211e
       remote: sekigon-gonnoc
-      revision: master
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
