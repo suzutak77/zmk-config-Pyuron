@@ -5,4 +5,4 @@ include:
   - board: xiao_ble//zmk
     shield: Pyuron_L rgbled_adapter
   - board: xiao_ble//zmk
-    shield: settings_reset 
+    shield: settings_reset
