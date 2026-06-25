@@ -15,8 +15,9 @@ manifest:
       import: app/west.yml
     - name: zmk-driver-iqs7211e
       remote: sekigon-gonnoc
+      revision: mini-trackpad
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision:  v0.3
+      revision: v0.3
   self:
     path: config
