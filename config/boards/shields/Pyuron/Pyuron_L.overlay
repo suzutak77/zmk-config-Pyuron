@@ -51,6 +51,20 @@
         compatible = "azoteq,iqs7211e";
         reg = <0x56>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-       // power-gpios = <&gpio0 9 GPIO_ACTIVE_HIGH>;
+        /* Tap gesture settings */
+        single-tap = <0>;
+        double-tap = <0>;
+        triple-tap = <0>;
+        // press-hold is defined but disabled by the driver
+
+        /* Scroll slider settings */
+        scroll-layer = <1>;
+        scroll-start = <27>;
+        // scroll-trigger-layers = <0>; // optional: only these highest active layers may enter scroll mode
+        rotate-cw = <0>;
+        // report-abs; // Use absolute coordinates (0-1024 inclusive)
+        // stationary-report-interval-ms = <20>; // optional: resend stationary ABS reports
+        // stationary-report-layers = <1>; // optional: only these highest active layers may resend
+        // stationary-touch-verify-interval-ms = <120>; // optional: verify touch during resends
     };
 };
