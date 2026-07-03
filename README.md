@@ -1,3 +1,10 @@
+### *mainブランチはPMW3610センサー専用
+### *paw3220ブランチはPAW3222/PAW3220センサー専用
+### *現行販売品はすべてPAW3222センサーを使用しているため、paw3220ブランチをフォークする必要があります。
+
+### 初期レイアウト
+<img width="1441" height="508" alt="{BA58E90F-F75E-409C-AD26-3CAB1DF640CF}" src="https://github.com/user-attachments/assets/0d4746f3-07f7-4d3e-a82a-b100d731166b" />
+
 # ファームウェア更新手順とキーマップの編集
 
 ## ZMK Studioによるキーマップの編集
