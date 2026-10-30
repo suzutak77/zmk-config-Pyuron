@@ -1,7 +1,7 @@
 manifest:
   remotes:
-    - name: zmkfirmware 
-      url-base: https://github.com/zmkfirmware
+    - name: cormoran 
+      url-base: https://github.com/cormoran
     - name: MeowCatpawkittie
       url-base: https://github.com/MeowCatpawkittie
     - name: caksoylar
@@ -10,9 +10,32 @@ manifest:
       url-base: https://github.com/sekigon-gonnoc
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: cormoran
+      revision: main+dya
       import: app/west.yml
+    - name: zephyr
+      remote: cormoran
+      revision: v4.1.0+zmk-fixes+nrf-half-duplex-uart
+      clone-depth: 1
+      import:
+        name-blocklist:
+          - ci-tools
+          - hal_altera
+          - hal_cypress
+          - hal_infineon
+          - hal_microchip
+          - hal_nxp
+          - hal_openisa
+          - hal_xtensa
+          - hal_st
+          - hal_ti
+          - loramac-node
+          - mcuboot
+          - mcumgr
+          - net-tools
+          - openthread
+          - edtt
+          - trusted-firmware-m
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
       revision: main
