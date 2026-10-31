@@ -36,7 +36,7 @@ split_inputs {
       compatible = "zmk,input-listener";
       status = "disabled";
         input-processors =
-            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT) &zip_temp_layer 6 10000>;
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT) &zip_temp_layer 6 4000>;
     };
 
     default_transform: keymap_transform_0 {
