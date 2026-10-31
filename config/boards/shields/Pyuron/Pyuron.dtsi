@@ -26,17 +26,17 @@ split_inputs {
 
     trackball_listener_L: trackball_listener_L {
       compatible = "zmk,input-listener";
-      status = "disabled";
+      status = "okay";
       device = <&trackball_split_L>;
         input-processors =
-            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>;
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,<&zip_temp_layer MOUSE 2000>;
     };
 
     trackball_listener_R: trackball_listener_R {
       compatible = "zmk,input-listener";
-      status = "disabled";
+      status = "okay";
         input-processors =
-            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,<&zip_temp_layer MOUSE 2000>;
     };
 
     default_transform: keymap_transform_0 {
