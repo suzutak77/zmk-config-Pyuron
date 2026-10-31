@@ -9,45 +9,54 @@
     nfct-pins-as-gpios;
 };
 
+// ==========================================
+// 1. &zip_temp_layer のカスタム設定（ルート外で定義）
+// ==========================================
+&zip_temp_layer {
+    excluded-positions = <32 33 34 36 37 38>; 
+};
+
 / {
     chosen {
         zmk,physical-layout = &default_layout;
     };
 
-split_inputs {
-      #address-cells = <1>;
-      #size-cells = <0>;
+    // 左右両方のトラックボール入力を定義
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
 
-      trackball_split_L: trackball_split_L@0 {
-        compatible = "zmk,input-split";
-        reg = <0>;
-      };
+        trackball_split_L: trackball_split_L@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+
+        trackball_split_R: trackball_split_R@1 {
+            compatible = "zmk,input-split";
+            reg = <1>;
+        };
     };
 
-// ファイルのルート階層（またはお使いのレイヤー定義の近くなど）に追記します
-&zip_temp_layer {
-    excluded-positions = <32 33 34 36 37 38>; // 除外したいキーポジション番号をスペース区切りで指定
-};
+    // ==========================================
+    // 2. リスナー設定（/ { ... }; の中に格納）
+    // ==========================================
+    trackball_listener_L: trackball_listener_L {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&trackball_split_L>;
+        input-processors =
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
+            <&zip_temp_layer 6 10000>;
+    };
 
-// --- 先ほど設定したリスナー部分はそのまま維持します ---
-trackball_listener_L: trackball_listener_L {
-  compatible = "zmk,input-listener";
-  status = "disabled";
-  device = <&trackball_split_L>;
-  input-processors =
-      <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
-      <&zip_temp_layer 6 10000>;
-};
-
-trackball_listener_R: trackball_listener_R {
-  compatible = "zmk,input-listener";
-  status = "disabled";
-  device = <&trackball_split_R>;
-  input-processors =
-      <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
-      <&zip_temp_layer 6 10000>;
-};
-
+    trackball_listener_R: trackball_listener_R {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&trackball_split_R>; // 右側のデバイスとの紐付けを追加
+        input-processors =
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_temp_layer 6 10000>;
+    };
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
@@ -60,6 +69,7 @@ trackball_listener_R: trackball_listener_R {
             RC(3,0) RC(3,1)                 RC(3,2) RC(3,3)     RC(3,7) RC(3,8)                 RC(3,9) RC(3,10)
         >;
     };
+}; // ルートノードの閉じカッコ
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
