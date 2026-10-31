@@ -11,11 +11,6 @@ manifest:
     - name: zmk-feature-custom-settings
       remote: cormoran
       revision: main
-    - name: zmk
-      remote: cormoran
-      revision: main+custom-studio-protocol
-      import:
-        file: app/west.yml
      # The below settings are required to use the unofficial Studio custom RPC feature
     - name: zmk
       remote: cormoran
