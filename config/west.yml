@@ -9,34 +9,23 @@ manifest:
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
   projects:
-   - name: zmk
+    - name: zmk
       remote: cormoran
       revision: main+dya
-      import:
-        file: app/west.yml
-    - name: zephyr
+      import: app/west.yml
+     # DYA Studio モジュール（すべて cormoran リポジトリ）
+    - name: zmk-module-ble-management
       remote: cormoran
-      revision: v4.1.0+zmk-fixes+nrf-half-duplex-uart
-      clone-depth: 1
-      import:
-        name-blocklist:
-          - ci-tools
-          - hal_altera
-          - hal_cypress
-          - hal_infineon
-          - hal_microchip
-          - hal_nxp
-          - hal_openisa
-          - hal_xtensa
-          - hal_st
-          - hal_ti
-          - loramac-node
-          - mcuboot
-          - mcumgr
-          - net-tools
-          - openthread
-          - edtt
-          - trusted-firmware-m
+      revision: main
+    - name: zmk-module-battery-history
+      remote: cormoran
+      revision: main
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: main
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: main
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
       revision: main
