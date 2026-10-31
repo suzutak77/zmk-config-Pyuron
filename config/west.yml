@@ -9,6 +9,9 @@ manifest:
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
   projects:
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: main # or latest commit hash
     - name: zmk-feature-custom-settings
       remote: cormoran
       revision: main
