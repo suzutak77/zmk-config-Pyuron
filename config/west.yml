@@ -14,7 +14,7 @@ manifest:
       revision: main
     - name: zmk
       remote: cormoran
-      revision: v0.3+custom-studio-protocol
+      revision: main+custom-studio-protocol
       import:
         file: app/west.yml
      # DYA Studio モジュール（すべて cormoran リポジトリ）
