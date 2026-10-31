@@ -29,14 +29,17 @@ split_inputs {
       status = "okay";
       device = <&trackball_split_L>;
         input-processors =
-            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,<&zip_temp_layer MOUSE 2000>;
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
+            <&zip_temp_layer 6 2000>; // MOUSEの代わりに6を指定
     };
 
     trackball_listener_R: trackball_listener_R {
       compatible = "zmk,input-listener";
       status = "okay";
+      // device = <&trackball_split_R>; // 右側のデバイス名に合わせて必要に応じて追記
         input-processors =
-            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,<&zip_temp_layer MOUSE 2000>;
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_temp_layer 6 2000>; // MOUSEの代わりに6を指定
     };
 
     default_transform: keymap_transform_0 {
