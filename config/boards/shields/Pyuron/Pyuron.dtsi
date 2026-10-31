@@ -26,7 +26,7 @@ split_inputs {
 
     trackball_listener_L: trackball_listener_L {
       compatible = "zmk,input-listener";
-      status = "okay";
+      status = "disabled";
       device = <&trackball_split_L>;
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>;
@@ -34,7 +34,7 @@ split_inputs {
 
     trackball_listener_R: trackball_listener_R {
       compatible = "zmk,input-listener";
-      status = "okay";
+      status = "disabled";
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
     };
