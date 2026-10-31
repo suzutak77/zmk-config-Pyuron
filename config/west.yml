@@ -2,8 +2,7 @@ manifest:
   remotes:
     - name: cormoran 
       url-base: https://github.com/cormoran
-    - name: MeowCatpawkittie
-      url-base: https://github.com/MeowCatpawkittie
+    
     - name: caksoylar
       url-base: https://github.com/caksoylar  
     - name: sekigon-gonnoc
