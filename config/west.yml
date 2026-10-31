@@ -9,10 +9,14 @@ manifest:
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
   projects:
+    - name: zmk-feature-custom-settings
+      remote: cormoran
+      revision: main
     - name: zmk
       remote: cormoran
-      revision: main+dya
-      import: app/west.yml
+      revision: main+custom-studio-protocol
+      import:
+        file: app/west.yml
      # DYA Studio モジュール（すべて cormoran リポジトリ）
     - name: zmk-module-ble-management
       remote: cormoran
