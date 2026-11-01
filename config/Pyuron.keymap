@@ -76,11 +76,11 @@
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos { compatible = "zmk,runtime-combos"; };
 
     macros {
         to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
+            compatible = "zmk,behavior-runtime-macro";
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
@@ -88,7 +88,7 @@
     };
 
     lt_to_layer_0: lt_to_layer_0 {
-        compatible = "zmk,behavior-hold-tap";
+        compatible = "zmk,runtime-conditional-layers";
         label = "LAYER_TAP_TO_0";
         bindings = <&mo>, <&to_layer_0>;
 
