@@ -2,7 +2,8 @@ manifest:
   remotes:
     - name: cormoran 
       url-base: https://github.com/cormoran
-    
+    - name: qtrnmr          # the remote name is arbitrary — reference it in projects below
+      url-base: https://github.com/qtrnmr
     - name: caksoylar
       url-base: https://github.com/caksoylar  
     - name: sekigon-gonnoc
@@ -14,9 +15,11 @@ manifest:
      # The below settings are required to use the unofficial Studio custom RPC feature
     - name: zmk
       remote: cormoran
-      revision: main+custom-studio-protocol
-      import:
-        file: app/west.yml
+      revision: v0.3-branch+dya
+      import: app/west.yml
+    - name: zmk-module-runtime-config
+      remote: qtrnmr
+      revision: main
      # DYA Studio モジュール（すべて cormoran リポジトリ）
     - name: zmk-module-ble-management
       remote: cormoran
@@ -26,7 +29,7 @@ manifest:
       revision: main
     - name: zmk-module-settings-rpc
       remote: cormoran
-      revision: main
+      revision: zmk-v0.3.0.0
     - name: zmk-module-runtime-input-processor
       remote: cormoran
       revision: main
