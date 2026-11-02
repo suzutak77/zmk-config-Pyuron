@@ -1,5 +1,4 @@
 include:
-  include:
   - board: seeeduino_xiao_ble
     shield: Pyuron_R
     snippet: studio-rpc-usb-uart
