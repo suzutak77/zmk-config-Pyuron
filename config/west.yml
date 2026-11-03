@@ -11,9 +11,6 @@ manifest:
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
   projects:
-    - name: zmk-feature-custom-settings
-      remote: cormoran
-      revision: main
      # The below settings are required to use the unofficial Studio custom RPC feature
     - name: zmk
       remote: cormoran
