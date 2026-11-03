@@ -9,8 +9,6 @@ config ZMK_SPLIT
 config ZMK_POINTING
     default y
 
-config PAW3222
-    default y
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
@@ -25,9 +23,6 @@ config ZMK_SPLIT
     default y
     
 config ZMK_POINTING
-    default y
-
-config PAW3222
     default y
 
 endif
