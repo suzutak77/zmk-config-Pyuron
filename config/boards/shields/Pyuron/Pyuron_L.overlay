@@ -55,8 +55,21 @@
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 };
-/* 左側用トラックボールのリスナー設定 */
-&trackball_listener_L {
-    status = "okay";
-    device = <&trackball_L>;
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+        trackball_split_L: trackball_split_L@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+            input = <&trackball_l>;
+        };
+    };
+
+    trackball_listener_L: trackball_listener_L {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackball_split_L>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT) &zip_temp_layer 6 4000>;
+    };
 };
