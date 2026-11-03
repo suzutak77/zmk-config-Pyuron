@@ -3,3 +3,7 @@ config SHIELD_PYURON_R
 
 config SHIELD_PYURON_L
     def_bool $(shields_list_contains,Pyuron_L)
+# PAW3222 トラックボール用設定の宣言
+config PAW3222
+    bool "PAW3222 trackball support"
+    default n
