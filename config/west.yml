@@ -11,25 +11,20 @@ manifest:
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
   projects:
-    # The below settings are required to use the unofficial Studio custom RPC feature
+    # DYA Studio用のZMK本体
     - name: zmk
       remote: cormoran
       revision: v0.3-branch+dya
       import: app/west.yml
-    # DYA Studio モジュール（cormoran リポジトリのものは v0.3-branch+dya に統一）
+    # 各モジュールはデフォルト（main）を使用
     - name: zmk-module-ble-management
       remote: cormoran
-      revision: v0.3-branch+dya
     - name: zmk-module-battery-history
       remote: cormoran
-      revision: v0.3-branch+dya
     - name: zmk-module-settings-rpc
       remote: cormoran
-      revision: v0.3-branch+dya
     - name: zmk-module-runtime-input-processor
       remote: cormoran
-      revision: v0.3-branch+dya
-    # 外部作者のドライバ・ウィジェットは main のままでOK
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
       revision: main
