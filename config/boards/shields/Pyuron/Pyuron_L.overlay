@@ -35,10 +35,6 @@
     };
 };
 
-&trackball_split_L {
-    device = <&trackball_L>;
-};
-
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -55,6 +51,7 @@
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 };
+
 / {
     split_inputs {
         #address-cells = <1>;
