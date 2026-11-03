@@ -22,6 +22,12 @@ split_inputs {
         compatible = "zmk,input-split";
         reg = <0>;
       };
+
+      /* ↓ この右側用の定義を追加します */
+      trackball_split_R: trackball_split_R@1 {
+        compatible = "zmk,input-split";
+        reg = <1>;
+      };
     };
 
     trackball_listener_L: trackball_listener_L {
