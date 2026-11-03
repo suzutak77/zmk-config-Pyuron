@@ -14,38 +14,6 @@
         zmk,physical-layout = &default_layout;
     };
 
-split_inputs {
-      #address-cells = <1>;
-      #size-cells = <0>;
-
-      trackball_split_L: trackball_split_L@0 {
-        compatible = "zmk,input-split";
-        reg = <0>;
-        input = <&trackball_l>; // ← 実際のセンサーノードのラベルや参照を指定
-      };
-
-      trackball_split_R: trackball_split_R@1 {
-        compatible = "zmk,input-split";
-        reg = <1>;
-        input = <&trackball_r>; // ← 実際のセンサーノードのラベルや参照を指定
-      };
-    };
-
-    trackball_listener_L: trackball_listener_L {
-      compatible = "zmk,input-listener";
-      status = "okay";
-      device = <&trackball_split_L>;
-        input-processors =
-            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT) &zip_temp_layer 6 4000>;
-    };
-
-    trackball_listener_R: trackball_listener_R {
-      compatible = "zmk,input-listener";
-      status = "okay";
-      device = <&trackball_split_R>; // ← この1行を追加（または確認）
-        input-processors =
-            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT) &zip_temp_layer 6 4000>;
-    };
 
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
