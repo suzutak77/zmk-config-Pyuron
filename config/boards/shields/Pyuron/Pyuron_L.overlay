@@ -55,3 +55,8 @@
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 };
+/* 左側用トラックボールのリスナー設定 */
+&trackball_listener_L {
+    status = "okay";
+    device = <&trackball_L>;
+};
