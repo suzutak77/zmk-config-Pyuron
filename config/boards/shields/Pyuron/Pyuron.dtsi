@@ -21,12 +21,13 @@ split_inputs {
       trackball_split_L: trackball_split_L@0 {
         compatible = "zmk,input-split";
         reg = <0>;
+        input = <&trackball_split_L>; // ← 実際のセンサーノードのラベルや参照を指定
       };
 
-      /* ↓ この右側用の定義を追加します */
       trackball_split_R: trackball_split_R@1 {
         compatible = "zmk,input-split";
         reg = <1>;
+        input = <&trackball_split_R>; // ← 実際のセンサーノードのラベルや参照を指定
       };
     };
 
