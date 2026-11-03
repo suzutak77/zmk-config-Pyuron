@@ -34,7 +34,7 @@ split_inputs {
 
     trackball_listener_R: trackball_listener_R {
       compatible = "zmk,input-listener";
-      status = "disabled";
+      status = "okay";
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT) &zip_temp_layer 6 4000>;
     };
