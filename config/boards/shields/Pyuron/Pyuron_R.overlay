@@ -37,15 +37,6 @@
     };
 };
 
-&trackball_listener_L {
-    status = "okay";
-};
-
-&trackball_listener_R {
-    status = "okay";
-    device = <&trackball_R>;
-};
-
 &spi0 {
     status = "okay";
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
@@ -62,6 +53,7 @@
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 };
+
 / {
     split_inputs {
         #address-cells = <1>;
@@ -69,7 +61,7 @@
         trackball_split_R: trackball_split_R@1 {
             compatible = "zmk,input-split";
             reg = <1>;
-            input = <&trackball_r>;
+            device = <&trackball_r>;
         };
     };
 
