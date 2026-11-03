@@ -54,7 +54,7 @@
     pinctrl-names = "default", "sleep";
     compatible = "nordic,nrf-spim";
 
-    trackball_R: trackball_R@0 {
+    trackball_r: trackball_R@0 {
         status = "okay";
         compatible = "pixart,paw3222";
         reg = <0>;
