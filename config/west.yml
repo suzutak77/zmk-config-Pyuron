@@ -13,6 +13,9 @@ manifest:
       revision: main
      # The below settings are required to use the unofficial Studio custom RPC feature
     - name: zmk
+      remote: zmkfirmware # または対応するフォーク元
+      revision: main+custom-studio-protocol # あるいはカスタム設定用のブランチ名
+    - name: zmk
       remote: cormoran
       revision: main+custom-studio-protocol
       import:
