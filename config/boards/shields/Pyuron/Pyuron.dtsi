@@ -1,9 +1,12 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <dt-bindings/zmk/input_transform.h>
-#include <dt-bindings/input/input-event-codes.h>
-#include <dt-bindings/zmk/bt.h>
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 #include <physical_layouts.dtsi>
+/* NOTE: <input/processors/runtime-input-processor.dtsi> は最終的に
+   modifiers.h を引き込み RC(keycode) を 1 引数で再定義するため、
+   このファイル内のマトリクス RC(row,col) と衝突する。
+   そのため runtime-input-processor.dtsi は overlay 側で
+   `#include "mona2.dtsi"` の後に include すること。 */
 
 &uicr {
     nfct-pins-as-gpios;
