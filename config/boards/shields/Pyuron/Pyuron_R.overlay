@@ -5,6 +5,7 @@
 #include <behaviors/battery_history_request.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include "Pyuron.dtsi"
+#include <dt-bindings/zmk/outputs.h>
 
 &default_transform {
     col-offset = <6>;
