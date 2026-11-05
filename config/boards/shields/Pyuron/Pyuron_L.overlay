@@ -1,5 +1,5 @@
-#include "mona2.dtsi"
-/* mona2.dtsi 内で RC(row,col) のマトリクス展開が終わった後に include する
+#include "Pyuron.dtsi"
+/* Pyuron.dtsi 内で RC(row,col) のマトリクス展開が終わった後に include する
    (runtime-input-processor.dtsi が modifiers.h 経由で RC(keycode) を再定義するため) */
 #include <input/processors/runtime-input-processor.dtsi>
 #include <input/processors.dtsi>
@@ -119,7 +119,7 @@
 
 };
 
-&trackball_central_listener {
+&trackball_peripheral_listener {
     status = "okay";
     device = <&trackball_central>;
     input-processors = <&mg &mouse_runtime_input_processor &scroll_runtime_input_processor &zip_scroll_scaler 1 100 &inertial_scroll>;
