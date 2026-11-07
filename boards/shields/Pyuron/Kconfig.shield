@@ -3,3 +3,15 @@ config SHIELD_PYURON_R
 
 config SHIELD_PYURON_L
     def_bool $(shields_list_contains,Pyuron_L)
+
+config TRACKBALL_PAW3222
+    bool "Use PAW3222 sensor on PYURON instead of PMW3610"
+    depends on SHIELD_PYURON_R
+    default n
+    select PAW3222
+
+config TRACKBALL_PAW3222
+    bool "Use PAW3222 sensor on PYURON instead of PMW3610"
+    depends on SHIELD_PYURON_L
+    default n
+    select PAW3222
