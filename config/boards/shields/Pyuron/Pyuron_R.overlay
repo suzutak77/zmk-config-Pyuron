@@ -41,11 +41,51 @@
     status = "okay";
 };
 
+/* ─────────────────────────────────────────────────────────────
+   scroll_runtime_input_processor をスクロール変換器として上書き
+   ────────────────────────────────────────────────────── */
+&scroll_runtime_input_processor {
+    x-codes = <INPUT_REL_X>;
+    y-codes = <INPUT_REL_Y>;
+    xy-to-scroll-enabled;
+    active-layers = <0x000000C0>; /* layer6 + layer7 */
+    scale-multiplier = <1>;
+    scale-divisor = <1>;   /* Studio UI の倍率がそのまま実効値 (1.0x基準)。固定減速は listener 側 zip_scroll_scaler */
+};
+
+&mouse_runtime_input_processor {
+};
+
+/* ─────────────────────────────────────────────────────────────
+   kot149 mouse-gesture input processor (Phase 5)
+   トップレベルの新規ノードなので `/ { ... }` で包む
+   ────────────────────────────────────────────────────── */
+/ {
+    mg: mouse_gesture {
+        compatible = "zmk,input-processor-mouse-gesture";
+        #input-processor-cells = <0>;
+        /* Activate only while &mg_set is held so normal mouse/scroll layers do not trigger gestures. */
+        stroke-size = <200>;
+        idle-timeout-ms = <150>;
+        gesture-cooldown-ms = <500>;
+
+        placeholder {
+            pattern = <GESTURE_UP GESTURE_RIGHT>;
+            bindings = <&kp ESC>;
+        };
+    };
+    inertial_scroll: inertial_scroll {
+        compatible = "zmk,input-processor-inertial-scroll";
+        status = "okay";
+        #input-processor-cells = <0>;
+    };
+
+};
+
 &trackball_listener_R {
     status = "okay";
-    device = <&trackball_R>;
-#     // ここにランタイムインプットプロセッサーを追加
-#     input-processors = <&zip_runtime_processor>;
+    device = <&trackball_central>;
+    input-processors = <&mg &mouse_runtime_input_processor &scroll_runtime_input_processor &zip_scroll_scaler 1 100 &inertial_scroll>;
 };
 
 &spi0 {
