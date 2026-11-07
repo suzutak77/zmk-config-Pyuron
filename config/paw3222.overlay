@@ -13,7 +13,7 @@
  * として渡される。
  */
 
-&trackball_central {
+&trackball_R {
     compatible = "pixart,paw3222";
     spi-max-frequency = <1000000>;
     force-awake;
