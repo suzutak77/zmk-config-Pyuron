@@ -37,6 +37,8 @@
 
 &trackball_split_L {
     device = <&trackball_L>;
+    // ここにランタイムインプットプロセッサーを追加
+    input-processors = <&zip_runtime_processor>;
 };
 
 &spi0 {
