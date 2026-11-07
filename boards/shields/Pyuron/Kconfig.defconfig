@@ -18,8 +18,8 @@ config ZMK_MOUSE
 
 # ※ PAW3222 がドライバ側にKconfig定義がない場合はエラーになるため除外するか、
 #    ドライバ側の正しい変数名に合わせてください。ここでは安全のためコメントアウトまたは除外を推奨
-# config PAW3222
-#     default y
+config PAW3222
+    default y
 
 config INPUT
     default y
