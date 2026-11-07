@@ -26,17 +26,19 @@ split_inputs {
 
     trackball_listener_L: trackball_listener_L {
       compatible = "zmk,input-listener";
-      status = "okay";
+      status = "disabled";
       device = <&trackball_split_L>;
-      // ランタイム（DYA Studio）から制御できるように変更
-      input-processors = <&zip_runtime_processor>;
+      /* DYA Studio で動的に編集できるよう、入力プロセッサは
+           overlay 側で &mouse_runtime_input_processor /
+           &scroll_runtime_input_processor へ委譲する */
     };
 
     trackball_listener_R: trackball_listener_R {
       compatible = "zmk,input-listener";
       status = "disabled";
-      // ランタイム（DYA Studio）から制御できるように変更
-      input-processors = <&zip_runtime_processor>;
+      /* DYA Studio で動的に編集できるよう、入力プロセッサは
+           overlay 側で &mouse_runtime_input_processor /
+           &scroll_runtime_input_processor へ委譲する */
     };
 
     default_transform: keymap_transform_0 {
