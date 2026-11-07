@@ -1,0 +1,9 @@
+file_format: "1"
+id: Pyuron
+name: Pyuron
+type: shield
+url: https://github.com/sayu-hub/zmk-config-Pyuron
+requires: [seeeduino_xiao_ble]
+features:
+  - keys
+  - studio
