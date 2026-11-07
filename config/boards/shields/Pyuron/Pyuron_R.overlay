@@ -44,8 +44,8 @@
 &trackball_listener_R {
     status = "okay";
     device = <&trackball_R>;
-    // ここにランタイムインプットプロセッサーを追加
-    input-processors = <&zip_runtime_processor>;
+#     // ここにランタイムインプットプロセッサーを追加
+#     input-processors = <&zip_runtime_processor>;
 };
 
 &spi0 {
