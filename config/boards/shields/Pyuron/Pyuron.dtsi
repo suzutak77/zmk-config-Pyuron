@@ -28,15 +28,15 @@ split_inputs {
       compatible = "zmk,input-listener";
       status = "okay";
       device = <&trackball_split_L>;
-        input-processors =
-            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT) &zip_temp_layer 6 4000>;
+      // ランタイム（DYA Studio）から制御できるように変更
+      input-processors = <&zip_runtime_processor>;
     };
 
     trackball_listener_R: trackball_listener_R {
       compatible = "zmk,input-listener";
       status = "disabled";
-        input-processors =
-            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT) &zip_temp_layer 6 4000>;
+      // ランタイム（DYA Studio）から制御できるように変更
+      input-processors = <&zip_runtime_processor>;
     };
 
     default_transform: keymap_transform_0 {
