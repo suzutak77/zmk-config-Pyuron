@@ -44,7 +44,7 @@
     pinctrl-names = "default", "sleep";
     compatible = "nordic,nrf-spim";
 
-    trackball_central: trackball@1 {
+    trackball_R: trackball@1 {
         status = "okay";
         compatible = "pixart,paw3222";
         reg = <0>;
@@ -54,9 +54,9 @@
 };
 
 // ペリフェラル（split経由）のリスナーを有効化
-&trackball_peripheral_listener {
+&trackball_L_listener {
     status = "okay";
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) &mouse_runtime_input_processor_peripheral>;  
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) &mouse_runtime_input_processor_L>;  
     // input-processors = 
     //         <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
     //         <&mouse_runtime_input_processor>,
@@ -64,12 +64,12 @@
 };
 
 // セントラルのリスナーを有効化し、deviceを紐付け
-&trackball_central_listener {
+&trackball_R_listener {
     status = "okay";
-    device = <&trackball_central>;
+    device = <&trackball_R>;
     input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) 
-         &mouse_runtime_input_processor_central>;
+         &mouse_runtime_input_processor_R>;
 };
 
 &scroll_runtime_input_processor {
