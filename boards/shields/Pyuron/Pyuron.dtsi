@@ -22,7 +22,7 @@ split_inputs {
       };
     };
 
-    peripheral_listener: peripheral_listener {
+    trackball_peripheral_listener: trackball_peripheral_listener {
       compatible = "zmk,input-listener";
       status = "disabled";
       device = <&trackball_split>;
@@ -30,7 +30,7 @@ split_inputs {
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT) &zip_temp_layer 6 4000>; */
     };
 
-    central_listener: central_listener {
+    trackball_central_listener: trackball_central_listener {
       compatible = "zmk,input-listener";
       status = "disabled";
      /* input-processors =
