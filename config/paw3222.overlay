@@ -13,13 +13,13 @@
  * として渡される。
  */
 
-&trackball_R {
+&trackball_central {
     compatible = "pixart,paw3222";
     spi-max-frequency = <1000000>;
     force-awake;
 }; // ← ここに閉じ括弧を追加
 
-&trackball_L {
+&trackball_peripheral {
     compatible = "pixart,paw3222";
     spi-max-frequency = <1000000>;
     force-awake;
