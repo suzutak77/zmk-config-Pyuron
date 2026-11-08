@@ -34,7 +34,7 @@
     };
 };
 
-&trackball_split_L {
+&trackball_split {
     device = <&trackball_peripheral>;
 };
 
