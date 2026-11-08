@@ -1,33 +1,45 @@
-if SHIELD_PYURON_R
+# 1. 左右共通の設定（どちらのシールドが有効でも適用される）
+if SHIELD_Pyuron_L || SHIELD_Pyuron_R
 
 config ZMK_KEYBOARD_NAME
-    default "Pyuron_R"
+    default "Pyuron"
+
+config NFCT_PINS_AS_GPIOS
+    default y
 
 config ZMK_SPLIT
     default y
-    
+
 config ZMK_POINTING
     default y
 
+# ※ PAW3222 がドライバ側にKconfig定義がない場合はエラーになるため除外するか、
+#    ドライバ側の正しい変数名に合わせてください。ここでは安全のためコメントアウトまたは除外を推奨
 config PAW3222
     default y
-config ZMK_SPLIT_ROLE_CENTRAL
+
+config INPUT
     default y
+
+config SPI
+    default y
+
+config RGBLED_WIDGET_BATTERY_LEVEL_HIGH
+    default 30
+
+config RGBLED_WIDGET_BATTERY_LEVEL_CRITICAL
+    default 10
 
 endif
 
-if SHIELD_PYURON_L
 
-config ZMK_KEYBOARD_NAME
-    default "Pyuron_L"
+# 2. 右側（Central / 親）専用の設定
+if SHIELD_Pyuron_R
 
-config ZMK_SPLIT
-    default y
-    
-config ZMK_POINTING
+config ZMK_BLE
     default y
 
-config PAW3222
+config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
