@@ -13,6 +13,6 @@ include:
     artifact-name: Pyuron_R-paw3222
   - board: xiao_ble/nrf52840/zmk
     shield: Pyuron_L rgbled_adapter
-    cmake-args: '-DEXTRA_CONF_FILE=../../config/paw3222.conf -DEXTRA_DTC_OVERLAY_FILE=../../config/paw3222.overlay'
+  #   cmake-args: '-DEXTRA_CONF_FILE=../../config/paw3222.conf -DEXTRA_DTC_OVERLAY_FILE=../../config/paw3222.overlay'
   - board: xiao_ble/nrf52840/zmk
     shield: settings_reset
