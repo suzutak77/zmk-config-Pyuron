@@ -54,7 +54,7 @@
 };
 
 // ペリフェラル（split経由）のリスナーを有効化
-&peripheral_listener {
+&trackball_peripheral_listener {
     status = "okay";
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) &mouse_runtime_input_processor_peripheral>;  
     // input-processors = 
@@ -64,7 +64,7 @@
 };
 
 // セントラルのリスナーを有効化し、deviceを紐付け
-&central_listener {
+&trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
     input-processors = 
