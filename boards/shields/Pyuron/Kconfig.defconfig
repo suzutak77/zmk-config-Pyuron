@@ -13,9 +13,14 @@ config ZMK_SPLIT
 config ZMK_POINTING
     default y
 
+# cormoran/zmk-driver-pmw3610-with-custom-studio-rpc のドライバ本体
+# (DT に compatible = "cormoran,pmw3610" のノードが無ければ自動的に無効)
+config PMW3610
+    default y
+
 # ※ PAW3222 がドライバ側にKconfig定義がない場合はエラーになるため除外するか、
 #    ドライバ側の正しい変数名に合わせてください。ここでは安全のためコメントアウトまたは除外を推奨
-# config PAW3222
+config PAW3222
     default y
 
 config INPUT
